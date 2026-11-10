@@ -39,7 +39,7 @@ function handleFormSubmit(event) {
     errorDisplay.textContent = "";
     // 4. Validation Check: Verify text field isn't empty or blank spaces
     //    If invalid, show error message to user and exit function early.
-        if (text === "") {
+    if (text === "") {
         errorDisplay.textContent = "Please enter a task";
         return;
     }
@@ -62,11 +62,11 @@ const toggleBtn = document.querySelector('#theme-toggle');
 
 toggleBtn.addEventListener('click', () => {
   // Toggle the 'dark-mode' class on <body>
-  document.body.classList.toggle('dark-mode');
-  const isDarkMode = document.body.classList.contains('dark-mode');
-  if (isDarkMode) {
-    toggleBtn.textContent = 'Light Mode';
-  } else {
-    toggleBtn.textContent = 'Dark Mode';
-  }
+    document.body.classList.toggle('dark-mode');
+    const isDarkMode = document.body.classList.contains('dark-mode');
+    if (isDarkMode) {
+        toggleBtn.textContent = 'Light Mode';
+    } else {
+        toggleBtn.textContent = 'Dark Mode';
+    }
 });
