@@ -6,11 +6,28 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+:root {
+  --bg-color: #f9d8dc;
+  --card-bg: #aa8e8e;
+  --text-primary: #1a202c;
+  --text-secondary: #96717a;
+  --border-color: #f7d4ea;
+  --accent-color: #aa677f;
+  --box-bg: #f8d6d8;
+}
+body.dark-mode {
+  --bg-color: #2c1a1f;
+  --card-bg: #32212f;
+  --text-primary: #d6b5b5;
+  --text-secondary: #906673;
+  --border-color: #291b20;
+  --accent-color: #683030;
+  --box-bg: #824d60;
+}
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f4f6f9;
-    color: #333333;
+    background-color: var(--bg-color);
+    color: var(--text-primary);
     padding: 20px;
     line-height: 1.6;
     transition: background-color 0.3s, color 0.3s;
@@ -27,13 +44,21 @@ body {
        Use CSS Flexbox or CSS Grid here to align the two section cards 
        side-by-side or stacked neatly depending on your grid layout.
     */
+        display: flex;
+        flex-direction: row;
+        align-items: center;        
+        justify-content: center;
+        gap: 16px;                   /* Space between items */
+        background-color: var(--bg-color);
+        padding: 20px;
+        border-radius: 20px;
 }
 
 /* ==========================================================================
    3. CARD & COMPONENT STYLING
    ========================================================================== */
 .card {
-    background-color: #ffffff;
+    background-color: var(--card-bg);
     border-radius: 8px;
     padding: 20px;
     margin-bottom: 20px;
@@ -41,6 +66,11 @@ body {
 }
 
 .app-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.welcome-header {
     text-align: center;
     margin-bottom: 20px;
 }
@@ -54,18 +84,20 @@ form {
 input, select, button {
     padding: 10px;
     font-size: 1rem;
-    border: 1px solid #cccccc;
+    border: 1px solid #6a5151;
     border-radius: 4px;
     outline: none;
+    background-color: var(--box-bg);
+    color: var(--text-primary);
 }
 
 /* Form interactions */
 input:focus, select:focus {
-    border-color: #007bff;
+    border-color: #ff005d;
 }
 
 button {
-    background-color: #007bff;
+    background-color:var(--accent-color);
     color: white;
     font-weight: bold;
     cursor: pointer;
@@ -74,7 +106,7 @@ button {
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #532644;
 }
 
 .error-text {
@@ -90,13 +122,13 @@ button:hover {
     align-items: center;
     padding: 12px;
     margin-bottom: 8px;
-    background: #f8f9fa;
-    border-left: 5px solid #6c757d; /* Default gray indicator */
+    background: var(--box-bg);
+    border-left: 5px solid #463c3e; /* Default gray indicator */
     border-radius: 4px;
     list-style: none;
 }
 
 /* Hint: Students can toggle these classes programmatically in JS based on priority selection */
-.task-item.priority-high { border-left-color: #dc3545; }
-.task-item.priority-medium { border-left-color: #ffc107; }
-.task-item.priority-low { border-left-color: #28a745; }
+.task-item.priority-high { border-left-color: #ff7583; }
+.task-item.priority-medium { border-left-color: #ffe188; }
+.task-item.priority-low { border-left-color: #85fea1; }
